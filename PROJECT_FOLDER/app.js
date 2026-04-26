@@ -2,15 +2,15 @@ const express = require('express');
 const app = express();
 
 const employeeRoutes = require("./app/routes/employee-route");
-console.log("employeeRoutes =", employeeRoutes);
+const employeeProfileRoutes = require("./app/routes/employee_profile-route");
+
+const errorHandler = require("./app/utils/error-handler");
 
 app.use(express.json());
 
 app.use("/api/employees", employeeRoutes);
+app.use("/api/employee-profiles", employeeProfileRoutes);
 
-app.use((err, req, res, next) => {
-    console.error(err);
-    res.status(500).json({ error: err.message });
-});
+app.use(errorHandler);
 
 module.exports = app;
