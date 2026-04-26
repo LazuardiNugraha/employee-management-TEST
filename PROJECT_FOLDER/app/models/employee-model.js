@@ -47,4 +47,25 @@ const Employee = sequelize.define("employee",
     }
 );
 
+Employee.associate = (models) => {
+    Employee.hasOne(models.employe_profile, {
+        foreignKey: 'employee_id',
+        as: 'profile'
+    });
+};
+
+Employee.associate = (models) => {
+    Employee.hasMany(models.employee_family, {
+        foreignKey: 'employee_id',
+        as: 'id'
+    });
+};
+
+Employee.associate = (models) => {
+    Employee.hasMany(models.education, {
+        foreignKey: 'employee_id',
+        as: 'id'
+    });
+};
+
 module.exports = Employee;
