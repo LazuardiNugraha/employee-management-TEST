@@ -23,7 +23,16 @@ const created = (res, data, message = "Data Created Successfully") => {
     });
 };
 
+const fetched = (res, data, message = "Data Fetched Successfully") => {
+    return success(res, {
+        status: 200,
+        message,
+        data
+    });
+};
+
 module.exports = {
     success,
-    created
+    created,
+    fetched
 }
