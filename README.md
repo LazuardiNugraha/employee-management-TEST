@@ -122,6 +122,40 @@ DELETE /api/employees/:id
 
 ---
 
+# v1.1.1 (2026-04-27)
+
+| Employee Relational CRUD Enhancement & Stability Patch |
+
+## Catatan
+
+### Relational Data Integration
+
+1. Penambahan relasi Employee dengan **profile, family, dan education** pada layer model Sequelize.
+2. Implementasi create employee dengan payload relasi terhubung (nested create).
+3. Implementasi update employee dengan payload relasi terhubung (nested update).
+4. Penambahan endpoint **Get All Employees** dengan include relasi profile, family, dan education.
+5. Implementasi **custom getReport query** untuk kebutuhan laporan berbasis relasi.
+
+### Repository & Query Improvements
+
+6. Penyesuaian repository untuk kebutuhan pencarian dan proses update data relasional.
+7. Perbaikan custom select query untuk kebutuhan data agregasi.
+8. Penyesuaian return response endpoint employee agar konsisten.
+
+### Model & Module Fixes
+
+9. Penyesuaian wiring model mengikuti format Sequelize module system.
+10. Penyesuaian export model berdasarkan module commonJS.
+11. Perbaikan import model berdasarkan module commonJS.
+12. Perbaikan naming function pada module employee_family.
+
+### Service & Payload Handling
+
+13. Penambahan payload options pada fungsi create untuk mendukung transaksi dan relasi data.
+14. Dokumentasi query input dan proses penarikan data.
+
+---
+
 # v1.2.0
 
 | Employee Profile CRUD Standard Initialization |
