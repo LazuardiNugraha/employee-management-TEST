@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: data_kepegawaian
+    ports:
+      - "3000:3001"
+    environment:
+      DB_HOST: localhost
+      DB_USER: postgres
+      DB_PASS: root
+      DB_NAME: data_kepegawaian
+      DB_PORT: 5432
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  postgres:
+    image: postgres:15
+    container_name: employee_postgress
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: data_kepegawaian
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
