@@ -50,3 +50,13 @@ exports.getAll = async (req, res, next) => {
         next(error);
     }
 }
+
+exports.getEmployeeReport = async (req, res, next) => {
+    try {
+        const result = await employeeService.getEmployeeReport();
+
+        return fetched(res, result, "Employee Report Fetch Successfully");
+    } catch (error) {
+        next(error);
+    }
+}

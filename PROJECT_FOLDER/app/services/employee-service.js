@@ -3,7 +3,6 @@ const employeeRepo = require("../repositories/employee-repository");
 class EmployeeService {
     async createEmployee(data) {
         const existing = await employeeRepo.findById(data.id);
-        // if (existing) throw new Error("Data pegawai sudah ")
 
         return employeeRepo.create(data);
     }
@@ -38,6 +37,12 @@ class EmployeeService {
             totalPages: Math.ceil(result.count / limit),
             data: result.rows
         };
+    }
+
+    async getEmployeeReport() {
+        const data = await employeeRepo.getReport();
+
+        return data;
     }
 }
 
