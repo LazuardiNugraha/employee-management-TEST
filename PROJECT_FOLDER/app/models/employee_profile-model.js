@@ -1,8 +1,5 @@
-const { DataTypes } = require("sequelize");
-const { sequelize } = require("../config/db_test");
-
 module.exports = (sequelize, DataTypes) => {
-    const EmployeeProfile = sequelize.define("employee_profile",
+    const EmployeeProfile = sequelize.define("EmployeeProfile",
         {
             id: {
                 type: DataTypes.INTEGER,
@@ -50,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
     );
 
     EmployeeProfile.associate = (models) => {
-        EmployeeProfile.belongsTo(models.employee, {
+        EmployeeProfile.belongsTo(models.Employee, {
             foreignKey: 'employee_id',
             as: 'employee'
         });

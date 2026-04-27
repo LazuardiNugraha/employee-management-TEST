@@ -1,8 +1,5 @@
-const { DataTypes } = require("sequelize");
-const { sequelize } = require("../config/db_test");
-
 module.exports = (sequelize, DataTypes) => {
-    const Employee = sequelize.define("employee",
+    const Employee = sequelize.define("Employee",
         {
             id: {
                 type: DataTypes.INTEGER,
@@ -49,23 +46,19 @@ module.exports = (sequelize, DataTypes) => {
     );
 
     Employee.associate = (models) => {
-        Employee.hasOne(models.employe_profile, {
+        Employee.hasOne(models.EmployeeProfile, {
             foreignKey: 'employee_id',
             as: 'profile'
         });
-    };
 
-    Employee.associate = (models) => {
-        Employee.hasMany(models.employee_family, {
-            foreignKey: 'employee_id',
-            as: 'id'
+        Employee.hasMany(models.EmployeeFamily, {
+          foreignKey: 'employee_id',
+          as: 'families',
         });
-    };
 
-    Employee.associate = (models) => {
-        Employee.hasMany(models.education, {
+        Employee.hasMany(models.Education, {
             foreignKey: 'employee_id',
-            as: 'id'
+            as: 'educations',
         });
     };
 
