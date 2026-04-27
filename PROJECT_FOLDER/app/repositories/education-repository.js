@@ -17,6 +17,10 @@ class EducationRepository {
   async delete(id) {
     return Education.destroy({ where: { id } });
   }
+
+  async bulkCreate(data, options = {}) {
+    return Education.bulkCreate(data, options);
+  }
 }
 
 module.exports = new EducationRepository();

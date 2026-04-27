@@ -1,8 +1,8 @@
 const EmployeeProfile = require("../models/employee_profile-model");
 
 class EmployeeProfileRepository {
-    async create(data) {
-        return EmployeeProfile.create(data);
+    async create(data, options = {}) {
+        return EmployeeProfile.create(data, options);
     }
 
     async findById(id) {

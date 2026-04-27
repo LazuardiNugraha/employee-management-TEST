@@ -1,8 +1,8 @@
 const { Employee, EmployeeProfile, EmployeeFamily, Education, sequelize } = require("../models");
 
 class EmployeeRepository {
-    async create(data) {
-        return Employee.create(data);
+    async create(data, options = {}) {
+        return Employee.create(data, options);
     }
 
     async findById(id) {

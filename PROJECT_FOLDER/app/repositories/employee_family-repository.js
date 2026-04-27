@@ -17,6 +17,10 @@ class EmployeeFamilyRepository {
     async delete(id) {
         return EmployeeFamily.destroy({ where: {id} });
     }
+
+    async bulkCreate(data, options = {}) {
+        return EmployeeFamily.bulkCreate(data, options);
+    }
 }
 
 module.exports = new EmployeeFamilyRepository();
