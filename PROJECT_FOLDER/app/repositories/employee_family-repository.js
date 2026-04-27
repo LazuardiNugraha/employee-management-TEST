@@ -1,4 +1,4 @@
-const EmployeeFamily = require("../models/employee_family-model");
+const { EmployeeFamily } = require("../models");
 
 class EmployeeFamilyRepository {
     async create(data) {
@@ -16,6 +16,17 @@ class EmployeeFamilyRepository {
 
     async delete(id) {
         return EmployeeFamily.destroy({ where: {id} });
+    }
+
+    async deleteByEmployeeId(where, options = {}) {
+        return EmployeeFamily.destroy({
+            where,
+            ...options
+        })
+    }
+
+    async bulkCreate(data, options = {}) {
+        return EmployeeFamily.bulkCreate(data, options);
     }
 }
 

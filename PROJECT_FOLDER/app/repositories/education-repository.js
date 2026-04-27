@@ -1,4 +1,4 @@
-const Education = require('../models/education-model');
+const { Education } = require('../models');
 
 class EducationRepository {
   async create(data) {
@@ -16,6 +16,17 @@ class EducationRepository {
 
   async delete(id) {
     return Education.destroy({ where: { id } });
+  }
+
+  async deleteByEmployeeId(where, options = {}) {
+    return Education.destroy({
+      where,
+      ...options
+    })
+  }
+
+  async bulkCreate(data, options = {}) {
+    return Education.bulkCreate(data, options);
   }
 }
 

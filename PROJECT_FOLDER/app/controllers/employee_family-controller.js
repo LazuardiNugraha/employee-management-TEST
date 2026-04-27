@@ -33,7 +33,7 @@ exports.updateEmployeeFamilyById = async (req, res, next) => {
 
 exports.deleteEmployeeFamilyById = async (req, res, next) => {
     try {
-        const result = employeeFamilyService.deleteEmployeProfileById(req.params.id);
+        const result = employeeFamilyService.deleteEmployeeFamilyById(req.params.id);
 
         return fetched(res, null, "Employee Family Deleted Successfully");
     } catch (error) {
