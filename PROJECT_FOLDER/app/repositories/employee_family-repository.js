@@ -1,4 +1,4 @@
-const EmployeeFamily = require("../models/employee_family-model");
+const { EmployeeFamily } = require("../models");
 
 class EmployeeFamilyRepository {
     async create(data) {

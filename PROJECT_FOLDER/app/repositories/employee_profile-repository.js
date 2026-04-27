@@ -1,4 +1,4 @@
-const EmployeeProfile = require("../models/employee_profile-model");
+const { EmployeeProfile } = require("../models");
 
 class EmployeeProfileRepository {
     async create(data, options = {}) {

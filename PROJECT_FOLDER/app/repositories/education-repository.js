@@ -1,4 +1,4 @@
-const Education = require('../models/education-model');
+const { Education } = require('../models');
 
 class EducationRepository {
   async create(data) {
