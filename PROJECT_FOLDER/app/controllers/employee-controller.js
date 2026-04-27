@@ -40,3 +40,13 @@ exports.deleteEmployeeById = async (req, res, next) => {
         next(error)
     }
 }
+
+exports.getAll = async (req, res, next) => {
+    try {
+        const result = await employeeService.getEmployees(req.query);
+
+        res.json(result);
+    } catch (error) {
+        next(error);
+    }
+}
