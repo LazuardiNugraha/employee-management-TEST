@@ -9,10 +9,7 @@ class EmployeeService {
     }
 
     async getEmployeeById(id) {
-        const employee = await employeeRepo.findById(id);
-        if (!employee) throw new Error("Employee not found");
-
-        return employee;
+        return await employeeRepo.findById(id);
     }
 
     async updateEmployee(id, data) {
