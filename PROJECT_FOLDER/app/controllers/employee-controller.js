@@ -64,5 +64,11 @@ exports.getEmployeeReport = async (req, res, next) => {
 exports.createEmployeeWithRelation = async (req, res, next) => {
     const result = await employeeService.createEmployeeWithRelation(req.body);
 
-    return created(res, result, "Employee, Profile, Families dan Educations Created Successfully");
+    return created(res, result, "Employee, Profile, Families and Educations Created Successfully");
+}
+
+exports.updateEmployeeWithRelation = async (req, res, next) => {
+    const result = await employeeService.updateEmployeeWithRelation(req.params.id, req.body);
+
+    return fetched(res, result, "Employee, Profile, Families and Educations Updated Successfully");
 }

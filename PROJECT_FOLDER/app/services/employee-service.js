@@ -89,6 +89,65 @@ class EmployeeService {
             throw error;
         }
     }
+
+    async updateEmployeeWithRelation(id, payload) {
+        const t = await sequelize.transaction();
+
+        try {
+            const { profile, families, educations, ...employeeData } = payload;
+
+            await employeeRepo.update(
+                id,
+                employeeData,
+                { transaction: t }
+            );
+
+            if (profile) {
+                const existingProfile = await employeeProfileRepo.findByEmployeeId(id, { transaction: t });
+
+                if (existingProfile) {
+                    await existingProfile.update(profile, { transaction: t });
+                } else {
+                    await employeeProfileRepo.create({
+                        ...profile,
+                        employee_id: id,
+                    }, { transaction: t });
+                }
+            }
+
+            /**
+             * Replace families data
+             */
+            if (families) {
+                await employeeFamilyRepo.deleteByEmployeeId(
+                    { employee_id: id },
+                    { transaction: t }
+                );
+
+                const familyData = families.map(f => ({ ...f, employee_id: id }));
+                await employeeFamilyRepo.bulkCreate(familyData, { transaction: t });
+            }
+
+            /**
+             * Replace educations data
+             */
+            if (educations) {
+                await educationRepo.deleteByEmployeeId(
+                    { employee_id: id },
+                    { transaction: t }
+                );
+
+                const educationData = educations.map(e => ({ ...e, employee_id: id }));
+                await educationRepo.bulkCreate(educationData, { transaction: t });
+            }
+
+            await t.commit();
+            return employeeRepo.findById(id);
+        } catch (error) {
+            await t.rollback();
+            throw error;
+        }
+    }
 }
 
 module.exports = new EmployeeService();
