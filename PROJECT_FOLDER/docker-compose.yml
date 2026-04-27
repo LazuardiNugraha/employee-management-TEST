@@ -4,10 +4,12 @@ services:
   app:
     build: .
     container_name: data_kepegawaian
+    depends_on:
+      - postgres
     ports:
       - "3000:3001"
     environment:
-      DB_HOST: localhost
+      DB_HOST: postgres
       DB_USER: postgres
       DB_PASS: root
       DB_NAME: data_kepegawaian
