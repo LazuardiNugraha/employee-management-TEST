@@ -60,3 +60,9 @@ exports.getEmployeeReport = async (req, res, next) => {
         next(error);
     }
 }
+
+exports.createEmployeeWithRelation = async (req, res, next) => {
+    const result = await employeeService.createEmployeeWithRelation(req.body);
+
+    return created(res, result, "Employee, Profile, Families dan Educations Created Successfully");
+}

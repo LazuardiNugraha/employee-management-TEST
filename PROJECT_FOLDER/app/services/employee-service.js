@@ -1,10 +1,15 @@
 const employeeRepo = require("../repositories/employee-repository");
+const employeeProfileRepo = require("../repositories/employee_profile-repository");
+const employeeFamilyRepo = require("../repositories/employee_family-repository");
+const educationRepo = require("../repositories/education-repository");
+
+const { sequelize } = require("../models");
 
 class EmployeeService {
-    async createEmployee(data) {
-        const existing = await employeeRepo.findById(data.id);
+    async createEmployee(data, options = {}) {
+        // const existing = await employeeRepo.findById(data.id);
 
-        return employeeRepo.create(data);
+        return employeeRepo.create(data, options);
     }
 
     async getEmployeeById(id) {
@@ -43,6 +48,46 @@ class EmployeeService {
         const data = await employeeRepo.getReport();
 
         return data;
+    }
+
+    async createEmployeeWithRelation(payload) {
+        const t = await sequelize.transaction();
+
+        try {
+            const { profile, families, educations, ...employeeData } = payload;
+
+            const employee = await employeeRepo.create(employeeData, { transaction: t });
+
+            if (profile) {
+                await employeeProfileRepo.create({
+                    ...profile,
+                    employee_id: employee.id
+                }, { transaction: t });
+            }
+
+            if (families?.length) {
+                const familyData = families.map(f => ({
+                    ...f,
+                    employee_id: employee.id
+                }));
+                await employeeFamilyRepo.bulkCreate(familyData, { transaction: t });
+            }
+
+            if (educations?.length) {
+                const educationData = educations.map(e => ({
+                    ...e,
+                    employee_id: employee.id
+                }));
+                await educationRepo.bulkCreate(educationData, { transaction: t });
+            }
+
+            await t.commit();
+
+            return employeeRepo.findById(employee.id);
+        } catch (error) {
+            await t.rollback();
+            throw error;
+        }
     }
 }
 

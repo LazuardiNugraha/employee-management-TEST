@@ -7,6 +7,7 @@ const { employeeValidation } = require("../middlewares/employee-validator");
  */
 router.get("/", employeeController.getAll);
 router.get("/report", employeeController.getEmployeeReport);
+router.post("/with-relation", employeeController.createEmployeeWithRelation);
 
 /**
  * CRUD Standard
