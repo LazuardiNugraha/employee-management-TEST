@@ -257,3 +257,70 @@ DELETE /api/employee-famiilies/:id
 ### Developer Experience Improvements
 
 13. Penyesuaian body request agar sesuai constraint NOT NULL PostgreSQL.
+
+---
+
+# v1.4.0
+
+| Education CRUD Standard Initialization |
+
+## Catatan
+
+### Database Migration & Schema
+
+1. Pembuatan migration tabel *education* menggunakan Sequelize CLI.
+2. Implementasi rollback migration dan perbaikan konfigurasi path Sequelize CLI.
+3. Penyesuaian skema tabel sesuai requirement tugas:
+
+   * Primary key *tidak auto increment*.
+   * Kolom *created_at* dan *updated_at* tidak menggunakan timestamps otomatis.
+   * Semua kolom mandatory disesuaikan dengan constraint PostgreSQL.
+   * Kolom *employee_id* merupakan foreign key untuk relasi many to one ke table employee.
+4. Sinkronisasi model Sequelize dengan struktur tabel database.
+
+### Model Layer
+
+5. Implementasi Sequelize model Education dengan konfigurasi:
+
+   * timestamps: false.
+   * Mapping field snake_case sesuai struktur tabel.
+
+### Repository Layer
+
+6. Implementasi repository pattern untuk akses data:
+
+   * create()
+   * findById()
+   * update()
+   * delete()
+
+7. Standarisasi pemanggilan Sequelize Model melalui repository sebagai data access abstraction.
+
+### Service Layer
+
+8. Implementasi service layer untuk business logic Education.
+9. Penyiapan struktur validasi business rule sebelum akses repository.
+
+### Controller Layer
+
+10. Implementasi Education Controller:
+
+* Create Education (POST)
+* Get Education by ID (GET)
+* Update Education (PUT)
+* Delete Education (DELETE)
+
+### Routing Layer
+
+11. Registrasi endpoint REST:
+
+````bash
+POST   /api/educations
+GET    /api/educations/:id
+PUT    /api/educations/:id
+DELETE /api/educations/:id
+````
+
+### Developer Experience Improvements
+
+12. Penyesuaian body request agar sesuai constraint NOT NULL PostgreSQL.
