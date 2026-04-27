@@ -21,7 +21,7 @@ class EmployeeFamilyService {
         return employeeFamilyRepo.update(id, data);
     }
 
-    async deleteEmployeProfileById(id) {
+    async deleteEmployeeFamilyById(id) {
         await this.getEmployeeFamilyById(id);
 
         return employeeFamilyRepo.delete(id);
