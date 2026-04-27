@@ -1,4 +1,4 @@
-const Employee = require("../models/employee-model");
+const { Employee, EmployeeProfile, EmployeeFamily, Education } = require("../models");
 
 class EmployeeRepository {
     async create(data) {
@@ -6,7 +6,30 @@ class EmployeeRepository {
     }
 
     async findById(id) {
-        return Employee.findByPk(id);
+        const employee = await Employee.findByPk(id, {
+            subQuery: false,
+            include: [
+                {
+                    model: EmployeeProfile,
+                    as: 'profile',
+                    attributes: { exclude: ['created_at', 'updated_at'] }
+                },
+                {
+                    model: EmployeeFamily,
+                    as: 'families',
+                    attributes: { exclude: ['created_at', 'updated_at'] }
+                },
+                {
+                    model: Education,
+                    as: 'educations',
+                    attributes: { exclude: ['created_at', 'updated_at'] }
+                },
+            ]
+        });
+
+        if (!employee) throw new Error('Employee not found');
+
+        return employee;
     }
 
     // async findByNik(nik) {
