@@ -32,8 +32,11 @@ class EmployeeRepository {
         return employee;
     }
 
-    async update(id, data) {
-        await Employee.update(data, { where: {id} });
+    async update(id, data, options = {}) {
+        await Employee.update(data, {
+          where: { id },
+          ...options,
+        });
         return this.findById(id);
     }
 

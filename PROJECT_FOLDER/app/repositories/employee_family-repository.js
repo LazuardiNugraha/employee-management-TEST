@@ -18,6 +18,13 @@ class EmployeeFamilyRepository {
         return EmployeeFamily.destroy({ where: {id} });
     }
 
+    async deleteByEmployeeId(where, options = {}) {
+        return EmployeeFamily.destroy({
+            where,
+            ...options
+        })
+    }
+
     async bulkCreate(data, options = {}) {
         return EmployeeFamily.bulkCreate(data, options);
     }
