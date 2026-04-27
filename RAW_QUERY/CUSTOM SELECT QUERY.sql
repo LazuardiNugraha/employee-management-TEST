@@ -10,6 +10,7 @@ SELECT
 	THEN DATE_PART('year', AGE(NOW(), emp_prf.date_of_birth))::int || ' Years Old'
   END AS age,
   
+  ed.name AS school_name,
   ed.level,
   
   COALESCE(fm.family_summary, '-') AS family_data
