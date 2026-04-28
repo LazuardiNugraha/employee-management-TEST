@@ -1,0 +1,1591 @@
+{
+  "info": {
+    "_postman_id": "174d6314-b7a3-4fc2-b865-db0969956bb2",
+    "name": "Data Kepegawaian",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31991040",
+    "_collection_link": "https://go.postman.co/collection/31991040-174d6314-b7a3-4fc2-b865-db0969956bb2?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Employee",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 5,\r\n    \"nik\": \"11013\",\r\n    \"name\": \"Jarot\",\r\n    \"is_active\": true,\r\n    \"start_date\": \"2021-09-01\",\r\n    \"end_date\": \"2028-09-01\",\r\n    \"created_at\": \"2026-04-27\",\r\n    \"updated_at\": \"2026-04-27\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{domain}}/api/employees",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "employees"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Succesfully",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\": 1,\r\n    \"nik\": \"123454321\",\r\n    \"name\": \"John Doe\",\r\n    \"is_active\": false,\r\n    \"start_date\": \"2026-04-25\",\r\n    \"end_date\": \"2030-04-25\",\r\n    \"created_at\": \"2026-04-25\",\r\n    \"updated_at\": \"2026-04-25\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{domain}}/api/employees",
+                  "host": [
+                    "{{domain}}"
+                  ],
+                  "path": [
+                    "api",
+                    "employees"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "256"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"100-KlPcZXG0M+7tIezRrMyTmL1sdfY\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 25 Apr 2026 14:31:37 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"nik\": \"123454321\",\n    \"name\": \"John Doe\",\n    \"is_active\": false,\n    \"start_date\": \"2026-04-25T00:00:00.000Z\",\n    \"end_date\": \"2030-04-25T00:00:00.000Z\",\n    \"created_at\": \"2026-04-25T00:00:00.000Z\",\n    \"updated_at\": \"2026-04-25T00:00:00.000Z\",\n    \"created_by\": null,\n    \"updated_by\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Find By Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{domain}}/api/employees/:id",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "employees",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Find By Id Successfully",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{domain}}/api/employees/:id",
+                  "host": [
+                    "{{domain}}"
+                  ],
+                  "path": [
+                    "api",
+                    "employees",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "256"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"100-VKkPNzr1+bF77MW/cqpTaFOQ78A\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 25 Apr 2026 14:39:34 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"nik\": \"123454321\",\n    \"name\": \"John Doe\",\n    \"is_active\": false,\n    \"start_date\": \"2026-04-25T00:00:00.000Z\",\n    \"end_date\": \"2030-04-25T00:00:00.000Z\",\n    \"created_by\": null,\n    \"updated_by\": null,\n    \"created_at\": \"2026-04-25T00:00:00.000Z\",\n    \"updated_at\": \"2026-04-25T00:00:00.000Z\"\n}"
+            },
+            {
+              "name": "Find By Id With Relation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{domain}}/api/employees/:id",
+                  "host": [
+                    "{{domain}}"
+                  ],
+                  "path": [
+                    "api",
+                    "employees",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1545"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"609-xgzwLEChjxuHXbXCPGUhAK/15J0\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Apr 2026 02:58:08 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Employee Fetched Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"nik\": \"11012\",\n        \"name\": \"Budi\",\n        \"is_active\": true,\n        \"start_date\": \"2022-12-11T17:00:00.000Z\",\n        \"end_date\": \"2029-12-11T17:00:00.000Z\",\n        \"created_by\": null,\n        \"updated_by\": null,\n        \"created_at\": \"2026-04-26T17:00:00.000Z\",\n        \"updated_at\": \"2026-04-26T17:00:00.000Z\",\n        \"profile\": {\n            \"id\": 1,\n            \"employee_id\": 1,\n            \"place_of_birth\": \"Jakarta\",\n            \"date_of_birth\": \"1997-05-01T17:00:00.000Z\",\n            \"gender\": \"Laki-Laki\",\n            \"is_married\": true,\n            \"prof_pict\": null,\n            \"created_by\": \"admin\",\n            \"updated_by\": \"admin\"\n        },\n        \"families\": [\n            {\n                \"id\": 1,\n                \"employee_id\": 1,\n                \"name\": \"Mami\",\n                \"identifier\": \"32100594109960002\",\n                \"job\": \"Ibu Rumah Tangga\",\n                \"place_of_birth\": \"Denpasar\",\n                \"date_of_birth\": \"1995-10-16T17:00:00.000Z\",\n                \"religion\": \"Islam\",\n                \"is_life\": true,\n                \"is_divorced\": false,\n                \"relation_status\": \"Istri\",\n                \"created_by\": \"admin\",\n                \"updated_by\": \"admin\"\n            },\n            {\n                \"id\": 2,\n                \"employee_id\": 1,\n                \"name\": \"Clara\",\n                \"identifier\": \"32100594109020004\",\n                \"job\": \"Pelajar\",\n                \"place_of_birth\": \"Bangkalan\",\n                \"date_of_birth\": \"2018-10-16T17:00:00.000Z\",\n                \"religion\": \"Islam\",\n                \"is_life\": true,\n                \"is_divorced\": false,\n                \"relation_status\": \"Anak\",\n                \"created_by\": \"admin\",\n                \"updated_by\": \"admin\"\n            },\n            {\n                \"id\": 3,\n                \"employee_id\": 1,\n                \"name\": \"Stephanie\",\n                \"identifier\": \"32100594109020005\",\n                \"job\": \"Pelajar\",\n                \"place_of_birth\": \"Bangkalan\",\n                \"date_of_birth\": \"2018-10-16T17:00:00.000Z\",\n                \"religion\": \"Islam\",\n                \"is_life\": true,\n                \"is_divorced\": false,\n                \"relation_status\": \"Anak\",\n                \"created_by\": \"admin\",\n                \"updated_by\": \"admin\"\n            }\n        ],\n        \"educations\": [\n            {\n                \"id\": 1,\n                \"employee_id\": 1,\n                \"name\": \"SMKN 7 Jakarta\",\n                \"level\": \"SMA\",\n                \"description\": \"Sekolah Menengah Atas\",\n                \"created_by\": \"admin\",\n                \"updated_by\": \"admin\"\n            }\n        ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update By Id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 1,\r\n    \"nik\": \"12345654321\",\r\n    \"name\": \"John Doe\",\r\n    \"is_active\": false,\r\n    \"start_date\": \"2026-04-25\",\r\n    \"end_date\": \"2030-04-25\",\r\n    \"created_at\": \"2026-04-25\",\r\n    \"updated_at\": \"2026-04-25\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{domain}}/api/employees/:id",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "employees",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update By Id Successfully",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\": 1,\r\n    \"nik\": \"12345654321\",\r\n    \"name\": \"John Doe\",\r\n    \"is_active\": false,\r\n    \"start_date\": \"2026-04-25\",\r\n    \"end_date\": \"2030-04-25\",\r\n    \"created_at\": \"2026-04-25\",\r\n    \"updated_at\": \"2026-04-25\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{domain}}/api/employees/:id",
+                  "host": [
+                    "{{domain}}"
+                  ],
+                  "path": [
+                    "api",
+                    "employees",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "258"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"102-/f4cDAVfvDvr1AIFDK8i2wv71SE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 25 Apr 2026 14:46:23 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"nik\": \"12345654321\",\n    \"name\": \"John Doe\",\n    \"is_active\": false,\n    \"start_date\": \"2026-04-25T00:00:00.000Z\",\n    \"end_date\": \"2030-04-25T00:00:00.000Z\",\n    \"created_by\": null,\n    \"updated_by\": null,\n    \"created_at\": \"2026-04-25T00:00:00.000Z\",\n    \"updated_at\": \"2026-04-25T00:00:00.000Z\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete By Id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{domain}}/api/employees/:id",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "employees",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Employee",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{domain}}/api/employees?page=1&limit=10",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "employees"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{domain}}/api/employees?page=1&limit=10",
+                  "host": [
+                    "{{domain}}"
+                  ],
+                  "path": [
+                    "api",
+                    "employees"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "2153"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"869-Fd0spvBHiSaWxdGnlhK2nndw95c\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Apr 2026 03:13:27 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"total\": 2,\n    \"page\": 1,\n    \"totalPages\": 1,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"nik\": \"11012\",\n            \"name\": \"Budi\",\n            \"is_active\": true,\n            \"start_date\": \"2022-12-11T17:00:00.000Z\",\n            \"end_date\": \"2029-12-11T17:00:00.000Z\",\n            \"created_by\": null,\n            \"updated_by\": null,\n            \"created_at\": \"2026-04-26T17:00:00.000Z\",\n            \"updated_at\": \"2026-04-26T17:00:00.000Z\",\n            \"profile\": {\n                \"id\": 1,\n                \"employee_id\": 1,\n                \"place_of_birth\": \"Jakarta\",\n                \"date_of_birth\": \"1997-05-01T17:00:00.000Z\",\n                \"gender\": \"Laki-Laki\",\n                \"is_married\": true,\n                \"prof_pict\": null,\n                \"created_by\": \"admin\",\n                \"updated_by\": \"admin\"\n            },\n            \"families\": [\n                {\n                    \"id\": 1,\n                    \"employee_id\": 1,\n                    \"name\": \"Mami\",\n                    \"identifier\": \"32100594109960002\",\n                    \"job\": \"Ibu Rumah Tangga\",\n                    \"place_of_birth\": \"Denpasar\",\n                    \"date_of_birth\": \"1995-10-16T17:00:00.000Z\",\n                    \"religion\": \"Islam\",\n                    \"is_life\": true,\n                    \"is_divorced\": false,\n                    \"relation_status\": \"Istri\",\n                    \"created_by\": \"admin\",\n                    \"updated_by\": \"admin\"\n                },\n                {\n                    \"id\": 2,\n                    \"employee_id\": 1,\n                    \"name\": \"Clara\",\n                    \"identifier\": \"32100594109020004\",\n                    \"job\": \"Pelajar\",\n                    \"place_of_birth\": \"Bangkalan\",\n                    \"date_of_birth\": \"2018-10-16T17:00:00.000Z\",\n                    \"religion\": \"Islam\",\n                    \"is_life\": true,\n                    \"is_divorced\": false,\n                    \"relation_status\": \"Anak\",\n                    \"created_by\": \"admin\",\n                    \"updated_by\": \"admin\"\n                },\n                {\n                    \"id\": 3,\n                    \"employee_id\": 1,\n                    \"name\": \"Stephanie\",\n                    \"identifier\": \"32100594109020005\",\n                    \"job\": \"Pelajar\",\n                    \"place_of_birth\": \"Bangkalan\",\n                    \"date_of_birth\": \"2018-10-16T17:00:00.000Z\",\n                    \"religion\": \"Islam\",\n                    \"is_life\": true,\n                    \"is_divorced\": false,\n                    \"relation_status\": \"Anak\",\n                    \"created_by\": \"admin\",\n                    \"updated_by\": \"admin\"\n                }\n            ],\n            \"educations\": [\n                {\n                    \"id\": 1,\n                    \"employee_id\": 1,\n                    \"name\": \"SMKN 7 Jakarta\",\n                    \"level\": \"SMA\",\n                    \"description\": \"Sekolah Menengah Atas\",\n                    \"created_by\": \"admin\",\n                    \"updated_by\": \"admin\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"nik\": \"11013\",\n            \"name\": \"Jarot\",\n            \"is_active\": true,\n            \"start_date\": \"2021-08-31T17:00:00.000Z\",\n            \"end_date\": \"2028-08-31T17:00:00.000Z\",\n            \"created_by\": null,\n            \"updated_by\": null,\n            \"created_at\": \"2026-04-26T17:00:00.000Z\",\n            \"updated_at\": \"2026-04-26T17:00:00.000Z\",\n            \"profile\": {\n                \"id\": 2,\n                \"employee_id\": 2,\n                \"place_of_birth\": \"Sukabumi\",\n                \"date_of_birth\": \"1996-05-01T17:00:00.000Z\",\n                \"gender\": \"Laki-Laki\",\n                \"is_married\": false,\n                \"prof_pict\": null,\n                \"created_by\": \"admin\",\n                \"updated_by\": \"admin\"\n            },\n            \"families\": [],\n            \"educations\": [\n                {\n                    \"id\": 2,\n                    \"employee_id\": 2,\n                    \"name\": \"Universitas Negeri Jakarta\",\n                    \"level\": \"Strata 1\",\n                    \"description\": \"Sarjana\",\n                    \"created_by\": \"admin\",\n                    \"updated_by\": \"admin\"\n                }\n            ]\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Custom Employee Report",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{domain}}/api/employees/report",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "employees",
+                "report"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{domain}}/api/employees/report",
+                  "host": [
+                    "{{domain}}"
+                  ],
+                  "path": [
+                    "api",
+                    "employees",
+                    "report"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "423"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1a7-35hpCqmcZOirVt9w/I7x4+j22U8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Apr 2026 03:28:42 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Employee Report Fetch Successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"nik\": \"11012\",\n            \"name\": \"Budi\",\n            \"is_active\": true,\n            \"gender\": \"Laki-Laki\",\n            \"age\": \"28 Years Old\",\n            \"school_name\": \"SMKN 7 Jakarta\",\n            \"level\": \"SMA\",\n            \"family_data\": \"1 Istri & 2 Anak\"\n        },\n        {\n            \"id\": 2,\n            \"nik\": \"11013\",\n            \"name\": \"Jarot\",\n            \"is_active\": true,\n            \"gender\": \"Laki-Laki\",\n            \"age\": \"29 Years Old\",\n            \"school_name\": \"Universitas Negeri Jakarta\",\n            \"level\": \"Strata 1\",\n            \"family_data\": \"-\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create With Relation",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": 3,\r\n  \"nik\": \"11014\",\r\n  \"name\": \"Jamet\",\r\n  \"is_active\": true,\r\n  \"start_date\": \"2020-01-01\",\r\n  \"end_date\": \"2030-01-01\",\r\n  \"created_at\": \"2026-04-27\",\r\n  \"updated_at\": \"2026-04-27\",\r\n\r\n  \"profile\": {\r\n    \"id\": 3,\r\n    \"place_of_birth\": \"Bandung\",\r\n    \"date_of_birth\": \"1997-05-10\",\r\n    \"gender\": \"Laki-Laki\",\r\n    \"is_married\": true,\r\n    \"created_at\": \"2026-04-27\",\r\n    \"updated_at\": \"2026-04-27\"\r\n  },\r\n\r\n  \"families\": [\r\n    { \"id\": 4, \"name\": \"Siti\", \"relation_status\": \"Istri\", \"created_at\": \"2026-04-27\", \"updated_at\": \"2026-04-27\" },\r\n    { \"id\": 5, \"name\": \"Andi\", \"relation_status\": \"Anak\", \"created_at\": \"2026-04-27\", \"updated_at\": \"2026-04-27\" }\r\n  ],\r\n\r\n  \"educations\": [\r\n    { \"id\": 3, \"name\": \"Universitas Indonesia\", \"level\": \"Strata 1\", \"description\": \"Sarjana\", \"created_by\": \"admin\", \"updated_by\": \"admin\", \"created_at\": \"2026-04-27\", \"updated_at\": \"2026-04-27\" }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{domain}}/api/employees/with-relation",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "employees",
+                "with-relation"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"id\": 3,\r\n  \"nik\": \"11014\",\r\n  \"name\": \"Jamet\",\r\n  \"is_active\": true,\r\n  \"start_date\": \"2020-01-01\",\r\n  \"end_date\": \"2030-01-01\",\r\n  \"created_at\": \"2026-04-27\",\r\n  \"updated_at\": \"2026-04-27\",\r\n\r\n  \"profile\": {\r\n    \"id\": 3,\r\n    \"place_of_birth\": \"Bandung\",\r\n    \"date_of_birth\": \"1997-05-10\",\r\n    \"gender\": \"Laki-Laki\",\r\n    \"is_married\": true,\r\n    \"created_at\": \"2026-04-27\",\r\n    \"updated_at\": \"2026-04-27\"\r\n  },\r\n\r\n  \"families\": [\r\n    { \"id\": 4, \"name\": \"Siti\", \"relation_status\": \"Istri\", \"created_at\": \"2026-04-27\", \"updated_at\": \"2026-04-27\" },\r\n    { \"id\": 5, \"name\": \"Andi\", \"relation_status\": \"Anak\", \"created_at\": \"2026-04-27\", \"updated_at\": \"2026-04-27\" }\r\n  ],\r\n\r\n  \"educations\": [\r\n    { \"id\": 3, \"name\": \"Universitas Indonesia\", \"level\": \"Strata 1\", \"description\": \"Sarjana\", \"created_by\": \"admin\", \"updated_by\": \"admin\", \"created_at\": \"2026-04-27\", \"updated_at\": \"2026-04-27\" }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{domain}}/api/employees/with-relation",
+                  "host": [
+                    "{{domain}}"
+                  ],
+                  "path": [
+                    "api",
+                    "employees",
+                    "with-relation"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1159"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"487-snJhp1RDvNhiym7dJ6lNLUNpaWA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Apr 2026 04:26:50 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Employee, Profile, Families dan Educations Created Successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"nik\": \"11014\",\n        \"name\": \"Jamet\",\n        \"is_active\": true,\n        \"start_date\": \"2020-01-01T00:00:00.000Z\",\n        \"end_date\": \"2030-01-01T00:00:00.000Z\",\n        \"created_by\": null,\n        \"updated_by\": null,\n        \"created_at\": \"2026-04-27T00:00:00.000Z\",\n        \"updated_at\": \"2026-04-27T00:00:00.000Z\",\n        \"profile\": {\n            \"id\": 3,\n            \"employee_id\": 3,\n            \"place_of_birth\": \"Bandung\",\n            \"date_of_birth\": \"1997-05-10T00:00:00.000Z\",\n            \"gender\": \"Laki-Laki\",\n            \"is_married\": true,\n            \"prof_pict\": null,\n            \"created_by\": null,\n            \"updated_by\": null\n        },\n        \"families\": [\n            {\n                \"id\": 4,\n                \"employee_id\": 3,\n                \"name\": \"Siti\",\n                \"identifier\": null,\n                \"job\": null,\n                \"place_of_birth\": null,\n                \"date_of_birth\": null,\n                \"religion\": null,\n                \"is_life\": null,\n                \"is_divorced\": null,\n                \"relation_status\": \"Istri\",\n                \"created_by\": null,\n                \"updated_by\": null\n            },\n            {\n                \"id\": 5,\n                \"employee_id\": 3,\n                \"name\": \"Andi\",\n                \"identifier\": null,\n                \"job\": null,\n                \"place_of_birth\": null,\n                \"date_of_birth\": null,\n                \"religion\": null,\n                \"is_life\": null,\n                \"is_divorced\": null,\n                \"relation_status\": \"Anak\",\n                \"created_by\": null,\n                \"updated_by\": null\n            }\n        ],\n        \"educations\": [\n            {\n                \"id\": 3,\n                \"employee_id\": 3,\n                \"name\": \"Universitas Indonesia\",\n                \"level\": \"Strata 1\",\n                \"description\": \"Sarjana\",\n                \"created_by\": \"admin\",\n                \"updated_by\": \"admin\"\n            }\n        ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update With Relation",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": 3,\r\n  \"nik\": \"11014\",\r\n  \"name\": \"Jamet\",\r\n  \"is_active\": true,\r\n  \"start_date\": \"2020-01-01\",\r\n  \"end_date\": \"2030-01-01\",\r\n  \"created_at\": \"2026-04-27\",\r\n  \"updated_at\": \"2026-04-27\",\r\n\r\n  \"profile\": {\r\n    \"id\": 3,\r\n    \"place_of_birth\": \"Bandung\",\r\n    \"date_of_birth\": \"1997-05-12\",\r\n    \"gender\": \"Laki-Laki\",\r\n    \"is_married\": true,\r\n    \"created_at\": \"2026-04-27\",\r\n    \"updated_at\": \"2026-04-27\"\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{domain}}/api/employees/:id/with-relation",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "employees",
+                ":id",
+                "with-relation"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"id\": 3,\r\n  \"nik\": \"11014\",\r\n  \"name\": \"Jamet\",\r\n  \"is_active\": true,\r\n  \"start_date\": \"2020-01-01\",\r\n  \"end_date\": \"2030-01-01\",\r\n  \"created_at\": \"2026-04-27\",\r\n  \"updated_at\": \"2026-04-27\",\r\n\r\n  \"profile\": {\r\n    \"id\": 3,\r\n    \"place_of_birth\": \"Bandung\",\r\n    \"date_of_birth\": \"1997-05-12\",\r\n    \"gender\": \"Laki-Laki\",\r\n    \"is_married\": true,\r\n    \"created_at\": \"2026-04-27\",\r\n    \"updated_at\": \"2026-04-27\"\r\n  }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{domain}}/api/employees/:id/with-relation",
+                  "host": [
+                    "{{domain}}"
+                  ],
+                  "path": [
+                    "api",
+                    "employees",
+                    ":id",
+                    "with-relation"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "3"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1159"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"487-IcGdpOc7qWOIwj/HWLCJAEdfzUE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Apr 2026 05:17:35 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Employee, Profile, Families and Educations Updated Successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"nik\": \"11014\",\n        \"name\": \"Jamet\",\n        \"is_active\": true,\n        \"start_date\": \"2020-01-01T00:00:00.000Z\",\n        \"end_date\": \"2030-01-01T00:00:00.000Z\",\n        \"created_by\": null,\n        \"updated_by\": null,\n        \"created_at\": \"2026-04-27T00:00:00.000Z\",\n        \"updated_at\": \"2026-04-27T00:00:00.000Z\",\n        \"profile\": {\n            \"id\": 3,\n            \"employee_id\": 3,\n            \"place_of_birth\": \"Bandung\",\n            \"date_of_birth\": \"1997-05-12T00:00:00.000Z\",\n            \"gender\": \"Laki-Laki\",\n            \"is_married\": true,\n            \"prof_pict\": null,\n            \"created_by\": null,\n            \"updated_by\": null\n        },\n        \"families\": [\n            {\n                \"id\": 4,\n                \"employee_id\": 3,\n                \"name\": \"Siti\",\n                \"identifier\": null,\n                \"job\": null,\n                \"place_of_birth\": null,\n                \"date_of_birth\": null,\n                \"religion\": null,\n                \"is_life\": null,\n                \"is_divorced\": null,\n                \"relation_status\": \"Istri\",\n                \"created_by\": null,\n                \"updated_by\": null\n            },\n            {\n                \"id\": 5,\n                \"employee_id\": 3,\n                \"name\": \"Andi\",\n                \"identifier\": null,\n                \"job\": null,\n                \"place_of_birth\": null,\n                \"date_of_birth\": null,\n                \"religion\": null,\n                \"is_life\": null,\n                \"is_divorced\": null,\n                \"relation_status\": \"Anak\",\n                \"created_by\": null,\n                \"updated_by\": null\n            }\n        ],\n        \"educations\": [\n            {\n                \"id\": 3,\n                \"employee_id\": 3,\n                \"name\": \"Universitas Indonesia\",\n                \"level\": \"Strata 1\",\n                \"description\": \"Sarjana\",\n                \"created_by\": \"admin\",\n                \"updated_by\": \"admin\"\n            }\n        ]\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Employee Profile",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 2,\r\n    \"employee_id\": 3,\r\n    \"gender\": \"Laki-Laki\",\r\n    \"is_married\": false,\r\n    \"created_at\": \"2026-04-26\",\r\n    \"updated_at\": \"2026-04-26\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{domain}}/api/employee-profiles",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "employee-profiles"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Successfully",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\": 1,\r\n    \"employee_id\": 2,\r\n    \"gender\": \"Perempuan\",\r\n    \"is_married\": false,\r\n    \"created_at\": \"2026-04-26\",\r\n    \"updated_at\": \"2026-04-26\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{domain}}/api/employee-profiles",
+                  "host": [
+                    "{{domain}}"
+                  ],
+                  "path": [
+                    "api",
+                    "employee-profiles"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "314"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"13a-aP/6G9QHEGyePmZCjsY33T+K8Ys\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 26 Apr 2026 03:19:40 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Employee Profile Created Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"employee_id\": 2,\n        \"gender\": \"Perempuan\",\n        \"is_married\": false,\n        \"created_at\": \"2026-04-26T00:00:00.000Z\",\n        \"updated_at\": \"2026-04-26T00:00:00.000Z\",\n        \"place_of_birth\": null,\n        \"date_of_birth\": null,\n        \"prof_pict\": null,\n        \"created_by\": null,\n        \"updated_by\": null\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Find By Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{domain}}/api/employee-profiles/:id",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "employee-profiles",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Find By Id Successfully",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{domain}}/api/employee-profiles/:id",
+                  "host": [
+                    "{{domain}}"
+                  ],
+                  "path": [
+                    "api",
+                    "employee-profiles",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "315"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"13b-NOlqrFA7WopNPkMkNXXq3tOxdEQ\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 26 Apr 2026 07:21:47 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Employee Profile Fetched Succcessfully\",\n    \"data\": {\n        \"id\": 1,\n        \"employee_id\": 2,\n        \"place_of_birth\": null,\n        \"date_of_birth\": null,\n        \"gender\": \"Perempuan\",\n        \"is_married\": false,\n        \"prof_pict\": null,\n        \"created_by\": null,\n        \"updated_by\": null,\n        \"created_at\": \"2026-04-26T00:00:00.000Z\",\n        \"updated_at\": \"2026-04-26T00:00:00.000Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update By Id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    // \"id\": 1,\r\n    // \"employee_id\": 2,\r\n    // \"gender\": \"Laki-Laki\",\r\n    \"place_of_birth\": \"Ponorogo\",\r\n    \"date_of_birth\": \"1945-08-17\"\r\n    // \"is_married\": false,\r\n    // \"created_at\": \"2026-04-26\",\r\n    // \"updated_at\": \"2026-04-26\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{domain}}/api/employee-profiles/:id",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "employee-profiles",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Successfully",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    // \"id\": 1,\r\n    // \"employee_id\": 2,\r\n    // \"gender\": \"Laki-Laki\",\r\n    \"place_of_birth\": \"Ponorogo\",\r\n    \"date_of_birth\": \"1945-08-17\"\r\n    // \"is_married\": false,\r\n    // \"created_at\": \"2026-04-26\",\r\n    // \"updated_at\": \"2026-04-26\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{domain}}/api/employee-profiles/:id",
+                  "host": [
+                    "{{domain}}"
+                  ],
+                  "path": [
+                    "api",
+                    "employee-profiles",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "329"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"149-HZgw2Vxj1bNmQS1iw67OZ8o7ddo\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 26 Apr 2026 07:26:03 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Employee Profile Updated\",\n    \"data\": {\n        \"id\": 1,\n        \"employee_id\": 2,\n        \"place_of_birth\": \"Ponorogo\",\n        \"date_of_birth\": \"1945-08-17T00:00:00.000Z\",\n        \"gender\": \"Perempuan\",\n        \"is_married\": false,\n        \"prof_pict\": null,\n        \"created_by\": null,\n        \"updated_by\": null,\n        \"created_at\": \"2026-04-26T00:00:00.000Z\",\n        \"updated_at\": \"2026-04-26T00:00:00.000Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete By Id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{domain}}/api/employee-profiles/:id",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "employee-profiles",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Employee Family",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 2,\r\n    \"employee_id\": 2,\r\n    \"name\": \"Mary Doe\",\r\n    \"religion\": \"Katolik\",\r\n    \"is_life\": true,\r\n    \"is_divorced\": false,\r\n    \"relation_status\": \"Anak\",\r\n    \"created_at\": \"2026-04-26\",\r\n    \"updated_at\": \"2026-04-26\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{domain}}/api/employee-families",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "employee-families"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Successfully",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\": 2,\r\n    \"employee_id\": 2,\r\n    \"name\": \"Mary Doe\",\r\n    \"religion\": \"Katolik\",\r\n    \"is_life\": true,\r\n    \"is_divorced\": false,\r\n    \"relation_status\": \"Anak\",\r\n    \"created_at\": \"2026-04-26\",\r\n    \"updated_at\": \"2026-04-26\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{domain}}/api/employee-families",
+                  "host": [
+                    "{{domain}}"
+                  ],
+                  "path": [
+                    "api",
+                    "employee-families"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "384"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"180-jexSfKLv6X6sB5sKamFNaK16J/E\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 26 Apr 2026 16:11:12 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Employee Family Created Successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"employee_id\": 2,\n        \"name\": \"Mary Doe\",\n        \"religion\": \"Katolik\",\n        \"is_life\": true,\n        \"is_divorced\": false,\n        \"relation_status\": \"Anak\",\n        \"created_at\": \"2026-04-26T00:00:00.000Z\",\n        \"updated_at\": \"2026-04-26T00:00:00.000Z\",\n        \"identifier\": null,\n        \"job\": null,\n        \"place_of_birth\": null,\n        \"date_of_birth\": null,\n        \"created_by\": null,\n        \"updated_by\": null\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Find  By Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{domain}}/api/employee-families/:id",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "employee-families",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Find  By Id Successfully",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{domain}}/api/employee-families/:id",
+                  "host": [
+                    "{{domain}}"
+                  ],
+                  "path": [
+                    "api",
+                    "employee-families",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "384"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"180-J5osE6S9iRojtz6PZHQpik2h3ic\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 26 Apr 2026 16:12:45 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Employee Family Fetched Successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"employee_id\": 2,\n        \"name\": \"Mary Doe\",\n        \"identifier\": null,\n        \"job\": null,\n        \"place_of_birth\": null,\n        \"date_of_birth\": null,\n        \"religion\": \"Katolik\",\n        \"is_life\": true,\n        \"is_divorced\": false,\n        \"relation_status\": \"Anak\",\n        \"created_by\": null,\n        \"updated_by\": null,\n        \"created_at\": \"2026-04-26T00:00:00.000Z\",\n        \"updated_at\": \"2026-04-26T00:00:00.000Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update By Id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"place_of_birth\": \"Magelang\",\r\n    \"date_of_birth\": \"2020-01-19\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{domain}}/api/employee-families/:id",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "employee-families",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update By Id Successfully",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"place_of_birth\": \"Magelang\",\r\n    \"date_of_birth\": \"2020-01-19\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{domain}}/api/employee-families/:id",
+                  "host": [
+                    "{{domain}}"
+                  ],
+                  "path": [
+                    "api",
+                    "employee-families",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "399"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"18f-DyS3aFmU/9aVhUAIvUCcmMWAib4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 26 Apr 2026 16:14:41 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Employee Family Updated\",\n    \"data\": {\n        \"id\": 2,\n        \"employee_id\": 2,\n        \"name\": \"Mary Doe\",\n        \"identifier\": null,\n        \"job\": null,\n        \"place_of_birth\": \"Magelang\",\n        \"date_of_birth\": \"2020-01-19T00:00:00.000Z\",\n        \"religion\": \"Katolik\",\n        \"is_life\": true,\n        \"is_divorced\": false,\n        \"relation_status\": \"Anak\",\n        \"created_by\": null,\n        \"updated_by\": null,\n        \"created_at\": \"2026-04-26T00:00:00.000Z\",\n        \"updated_at\": \"2026-04-26T00:00:00.000Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete By Id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{domain}}/api/employee-families/:id",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "employee-families",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Education",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 1,\r\n    \"employee_id\": 1,\r\n    \"name\": \"SMKN 7 Jakarta\",\r\n    \"level\": \"SMA\",\r\n    \"description\": \"Sekolah Menengah Atas\",\r\n    \"created_by\": \"admin\",\r\n    \"updated_by\": \"admin\",\r\n    \"created_at\": \"2022-12-12\",\r\n    \"updated_at\": \"2022-12-12\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{domain}}/api/educations",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "educations"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Successfully",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\": 1,\r\n    \"employee_id\": 2,\r\n    \"name\": \"Universitas Darurssalam Gontor\",\r\n    \"level\": \"Strata 1\",\r\n    \"description\": \"Sarjana\",\r\n    \"created_by\": \"admin\",\r\n    \"updated_by\": \"admin\",\r\n    \"created_at\": \"2026-04-26\",\r\n    \"updated_at\": \"2026-04-26\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{domain}}/api/educations",
+                  "host": [
+                    "{{domain}}"
+                  ],
+                  "path": [
+                    "api",
+                    "educations"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "296"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"128-tBZyE/kbxUG0hdvnzTK7lGRTDpU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 26 Apr 2026 16:53:23 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Education Created Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"employee_id\": 2,\n        \"name\": \"Universitas Darurssalam Gontor\",\n        \"level\": \"Strata 1\",\n        \"description\": \"Sarjana\",\n        \"created_by\": \"admin\",\n        \"updated_by\": \"admin\",\n        \"created_at\": \"2026-04-26T00:00:00.000Z\",\n        \"updated_at\": \"2026-04-26T00:00:00.000Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Find By Id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 1,\r\n    \"employee_id\": 2,\r\n    \"name\": \"Universitas Darurssalam Gontor\",\r\n    \"level\": \"Strata 1\",\r\n    \"description\": \"Sarjana\",\r\n    \"created_by\": \"admin\",\r\n    \"updated_by\": \"admin\",\r\n    \"created_at\": \"2026-04-26\",\r\n    \"updated_at\": \"2026-04-26\"\r\n}"
+            },
+            "url": {
+              "raw": "{{domain}}/api/educations/:id",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "educations",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Find By Id Successfully",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\": 1,\r\n    \"employee_id\": 2,\r\n    \"name\": \"Universitas Darurssalam Gontor\",\r\n    \"level\": \"Strata 1\",\r\n    \"description\": \"Sarjana\",\r\n    \"created_by\": \"admin\",\r\n    \"updated_by\": \"admin\",\r\n    \"created_at\": \"2026-04-26\",\r\n    \"updated_at\": \"2026-04-26\"\r\n}"
+                },
+                "url": {
+                  "raw": "{{domain}}/api/educations/:id",
+                  "host": [
+                    "{{domain}}"
+                  ],
+                  "path": [
+                    "api",
+                    "educations",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "296"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"128-KVY/lQDMf19nYC0Cde4fePgVExY\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Apr 2026 00:10:58 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Education Fetched Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"employee_id\": 2,\n        \"name\": \"Universitas Darurssalam Gontor\",\n        \"level\": \"Strata 1\",\n        \"description\": \"Sarjana\",\n        \"created_by\": \"admin\",\n        \"updated_by\": \"admin\",\n        \"created_at\": \"2026-04-26T00:00:00.000Z\",\n        \"updated_at\": \"2026-04-26T00:00:00.000Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update By Id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{domain}}/api/educations/:id",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "educations",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete By Id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{domain}}/api/educations/:id",
+              "host": [
+                "{{domain}}"
+              ],
+              "path": [
+                "api",
+                "educations",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
